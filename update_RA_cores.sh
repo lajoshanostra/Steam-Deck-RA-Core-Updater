@@ -54,7 +54,6 @@ color_text_warning() {
     gum style --foreground "#f03b3e" "$text"
 }
 
-#
 
 gum style \
     --border rounded \
