@@ -21,6 +21,7 @@ This script will simplify that process for end-users, because ☁️**STEAM CLOU
 - Final cleanup of unused files from the cores archive
 
 ## How to use this script
+### From the Steam Deck
 - On your Steam Deck, switch to Desktop Mode and download the Bash script `update_RA_cores.sh` from this repository
 - By default, this should download to your Downloads folder at `/home/deck/Downloads`
 - Right-click on the file in Dolphin (default File Explorer)-> Properties
@@ -31,11 +32,17 @@ This script will simplify that process for end-users, because ☁️**STEAM CLOU
 
 
 - Right-click on the file again -> select `Run in Konsole`. This will run the script in the Steam Deck's default Terminal (Konsole)
+
+### From a computer
+- Download `update_RA_cores.sh` and `scp` the file to your Steam Deck.
+- Open a `ssh` to your Steam Deck
+- Make the script exectuable: `chmod +x update_RA_cores.sh`
+- Run the script (as sudo): `sudo sh update_RA_cores.sh`
 ---
 - You will be greeted by a familar rodent, with short instructions on how to use the script
-- The script will prompt you on what version of RetroArch cores you wish to download. Currently the mainline version is `1.10.3`. You can bring up the Steam Keyboard by using the default `STEAM + X` shortcut.
-- The script will then prompt you whether your Steam Version of RetroArch is installed on `internal` memory, or `sd` memory. Please type either `internal` or `sd`
-- A confirmation prompt will appear, displaying which version you have selected, and where your RetroArch is installed. Type `y` to continue or `n` to exit the script
+- The script will prompt you on what version of RetroArch cores you wish to download. Currently the mainline version is `1.16.0`. 
+- The script will then prompt you whether your Steam Version of RetroArch is installed on `internal` memory, or `sd` memory. Please select either `internal` or `sd`
+- A confirmation prompt will appear, displaying which version you have selected, and where your RetroArch is installed. Select `yes` to continue or `no` to exit the script
 ---
 - That's it~! The script will take care of the rest!
 - Once you see `Success` on screen, close the Konsole window, return to Game Mode, launch, RetroArch, and start playing!
