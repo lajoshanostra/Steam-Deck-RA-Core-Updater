@@ -61,6 +61,8 @@ color_text_warning() {
 # User input version number of RA Cores to be downloaded
 
 gum style \
+    --border rounded \
+    --border-foreground "$border_color_info" \
     --align center \
     --width 100 \
     --padding "2" \
@@ -79,6 +81,8 @@ VERSION=$(cat versions.json | gum choose)
 # $RA_DIRECTORY will then be used as the path to download RA Core Info Files and Cores themselves
 
 gum style \
+    --border rounded \
+    --border-foreground "$border_color_info" \
     --align center \
     --width 100 \
     --padding "2" \
@@ -129,9 +133,9 @@ gum style \
     --border-foreground "$border_color_waiting" \
     --align center \
     --width 100 \
-    --margin "10 10 10" \
-    --padding "10 10 10" \
-    "Installation is finished. Would you like to $(color_text_2 "re-enable") the immutable file system, and $(color_text_warning "uninstall") script dependencies?" && gum confirm || exit
+    --padding "2 2" \
+    "Installation is finished. Would you like to $(color_text_2 "re-enable") the immutable file system", \
+    "and $(color_text_warning "uninstall") script dependencies?" && gum confirm || exit
 
 sudo pacman -Rn --noconfirm gum >> /dev/null && steamos-readonly enable >> /dev/null
 
