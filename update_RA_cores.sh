@@ -33,6 +33,10 @@ cat << "EOF"
 
 EOF
 
+# Make FS writeable, download gum and jq
+
+sudo steamos-readonly disable >> /dev/null && pacman -S --needed --noconfirm gum >> /dev/null
+
 # Styles
 
 border_color_info="#1375c2"
@@ -53,22 +57,6 @@ color_text_warning() {
     text=$1
     gum style --foreground "#f03b3e" "$text"
 }
-
-
-gum style \
-    --border rounded \
-    --border-foreground "$border_color_waiting" \
-    --align center \
-    --width 100 \
-    --margin "10 10 10" \
-    --padding "10 10 10" \
-    "This script requires being run as $(color_text_warning "sudo"), and will make the Steam Filesystem $(color_text_2 "no longer immutable"). We will also install two packages using pacman: jq and gum." \
-    "" \
-    "There will be an option to $(color_text_2 "re-enable") the immutable file system, and uninstall jq and gum at the end of the script. $(color_text_warning "Continue???")" && gum confirm || exit
-
-# Make FS writeable, download gum and jq
-
-sudo steamos-readonly disable && pacman -S --needed gum jq
 
 # User input version number of RA Cores to be downloaded
 
@@ -138,10 +126,15 @@ rm -rf RetroArch_cores.7z configure cores retroarch RetroArch-Linux-x86_64 Retro
 
 gum style \
     --border rounded \
-    --border-foreground "$border_color_success" \
+    --border-foreground "$border_color_waiting" \
     --align center \
     --width 100 \
-    --padding "2" \
-    "Success! Enjoy the latest RetroArch!"
+    --margin "10 10 10" \
+    --padding "10 10 10" \
+    "Installation is finished. Would you like to $(color_text_2 "re-enable") the immutable file system, and $(color_text_warning "uninstall") script dependencies?" && gum confirm || exit
+
+sudo pacman -Rn --noconfirm gum >> /dev/null && steamos-readonly enable >> /dev/null
+
+echo "Steamos-readonly is enabled, and script dependencies removed. Enjoy RetroArch!"
 
 exit
