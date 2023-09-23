@@ -1,6 +1,6 @@
 # Steam-Deck-RA-Core-Updater
 
-![Script](https://github.com/lajoshanostra/Steam-Deck-RA-Core-Updater/blob/main/image.png?raw=true)
+![Script](https://github.com/lajoshanostra/Steam-Deck-RA-Core-Updater/blob/develop/image.png)
 
 This script is designed to assist in downloading *all* RetroArch cores and info files from Libretro instead of relying on Steam DLC.
 It is meant to be as easy-to-use as possible, as there are a lot of Steam Deck users not entirely familiar with Linux.🐧
