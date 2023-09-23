@@ -36,7 +36,7 @@ This script will simplify that process for end-users, because ☁️**STEAM CLOU
 ### From a computer
 - Download `update_RA_cores.sh` and `scp` the file to your Steam Deck.
 - Open a `ssh` to your Steam Deck
-- Make the script exectuable: `chmod +x update_RA_cores.sh`
+- Make the script exectuable: `chmod +X update_RA_cores.sh`
 - Run the script (as sudo): `sudo sh update_RA_cores.sh`
 ---
 - You will be greeted by a familar rodent, with short instructions on how to use the script
