@@ -55,7 +55,7 @@ read -e -p "Where is RetroArch installed on your Steam Deck? (internal, sd)?:" L
 
 if [ $LOCATION = 'internal' ]
 then
-        RA_DIRECTORY=/home/deck/.local/share/Steam/steamapps/common/RetroArch/cores
+        RA_DIRECTORY=~/.local/share/Steam/steamapps/common/RetroArch/cores
 elif [ $LOCATION = 'sd' ]
 then
         RA_DIRECTORY=/run/media/mmcblk0p1/steamapps/common/RetroArch/cores
